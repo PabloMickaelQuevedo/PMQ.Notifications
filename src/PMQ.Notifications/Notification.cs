@@ -1,12 +1,23 @@
-﻿/// <summary>
+﻿namespace PMQ.Notifications;
+
+/// <summary>
 /// Represents a notification containing a key, message, and an optional type for categorization.
 /// </summary>
-namespace PMQ.Notifications;
-
 public class Notification
 {
+    /// <summary>
+    /// Gets the notification key.
+    /// </summary>
     public string Key { get; }
+
+    /// <summary>
+    /// Gets the notification message.
+    /// </summary>
     public string Message { get; }
+
+    /// <summary>
+    /// Gets the notification type, if specified.
+    /// </summary>
     public NotificationType? Type { get; }
 
     /// <summary>

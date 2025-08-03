@@ -1,8 +1,8 @@
-﻿/// <summary>
+﻿namespace PMQ.Notifications;
+
+/// <summary>
 /// Represents a context for managing notifications.
 /// </summary>
-namespace PMQ.Notifications;
-
 public class NotificationContext : INotificationContext
 {
     /// <summary>
