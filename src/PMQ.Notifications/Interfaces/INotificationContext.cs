@@ -1,8 +1,8 @@
-﻿/// <summary>
+﻿namespace PMQ.Notifications;
+
+/// <summary>
 /// Defines a contract for managing notifications within a context.
 /// </summary>
-namespace PMQ.Notifications;
-
 public interface INotificationContext
 {
     /// <summary>
@@ -35,7 +35,7 @@ public interface INotificationContext
     /// <param name="message">The notification message.</param>
     /// <param name="type">The notification type (optional).</param>
     void Add(string key, string message, NotificationType? type = null);
-    
+
     /// <summary>
     /// Adds a range of notifications to the context.
     /// </summary>

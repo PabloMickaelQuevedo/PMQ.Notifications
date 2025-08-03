@@ -6,12 +6,28 @@
 public sealed class NotificationType : IEquatable<NotificationType>
 {
     /// <summary>
-    /// Represents predefined notification types.
+    /// Represents a validation notification type.
     /// </summary>
     public static readonly NotificationType Validation = new("VALIDATION");
+
+    /// <summary>
+    /// Represents a business rule notification type.
+    /// </summary>
     public static readonly NotificationType BusinessRule = new("BUSINESSRULE");
+
+    /// <summary>
+    /// Represents a not found notification type.
+    /// </summary>
     public static readonly NotificationType NotFound = new("NOTFOUND");
+
+    /// <summary>
+    /// Represents an inconsistent state notification type.
+    /// </summary>
     public static readonly NotificationType InconsistentState = new("INCONSISTENTSTATE");
+
+    /// <summary>
+    /// Represents an access denied notification type.
+    /// </summary>
     public static readonly NotificationType AccessDenied = new("ACCESSDENIED");
 
     /// <summary>
@@ -53,9 +69,18 @@ public sealed class NotificationType : IEquatable<NotificationType>
     public bool Equals(NotificationType? other)
         => other is not null && Value == other.Value;
 
+    /// <summary>
+    /// Determines whether the specified object is equal to the current <see cref="NotificationType"/>.
+    /// </summary>
+    /// <param name="obj">The object to compare with the current notification type.</param>
+    /// <returns>True if the specified object is equal to the current notification type; otherwise, false.</returns>
     public override bool Equals(object? obj)
         => obj is NotificationType other && Equals(other);
 
+    /// <summary>
+    /// Returns a hash code for the current <see cref="NotificationType"/>.
+    /// </summary>
+    /// <returns>A hash code for the current notification type.</returns>
     public override int GetHashCode()
         => Value.GetHashCode(StringComparison.Ordinal);
 
