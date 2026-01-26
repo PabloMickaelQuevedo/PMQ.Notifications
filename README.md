@@ -30,6 +30,55 @@ The package provides a notification context (`INotificationContext`) to register
 - `NotificationContext`: Default implementation of `INotificationContext`.
 - `Notification`: Represents a single notification (key, message, type).
 - `NotificationType`: Enum-like value object for message categorization.
+- `Validatable`: Abstract base class that provides validation capabilities using FluentValidation.
+
+---
+
+## Validatable Base Class
+
+The `Validatable` abstract class provides a foundation for creating domain entities and value objects with built-in validation support. It manages validation errors using FluentValidation and offers methods to add, clear, and query validation failures.
+
+### Key features
+
+- **ValidationResult**: Stores all validation errors for the object.
+- **IsValid / IsInvalid**: Properties to quickly check the validation state.
+- **ClearValidation()**: Clears all accumulated validation errors.
+- **AddNotification()**: Protected methods to add validation failures by property and message.
+- **AddNotifications()**: Adds multiple validation failures at once.
+- **[JsonIgnore]**: Validation properties are automatically excluded from JSON serialization.
+
+### Example usage
+
+```csharp
+using PMQ.Notifications.Base;
+
+public class Product : Validatable
+{
+    public string Name { get; private set; }
+    public decimal Price { get; private set; }
+
+    public Product(string name, decimal price)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            AddNotification(nameof(Name), "Product name cannot be empty.");
+
+        if (price <= 0)
+            AddNotification(nameof(Price), "Price must be greater than zero.");
+
+        Name = name;
+        Price = price;
+    }
+}
+
+// Usage
+var product = new Product("", -10);
+
+if (product.IsInvalid)
+{
+    var errors = product.ValidationResult.Errors;
+    // Handle validation errors
+}
+```
 
 ---
 
