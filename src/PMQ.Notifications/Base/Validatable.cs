@@ -1,11 +1,16 @@
-namespace PMQ.Notification;
-
-using FluentValidation.Results;
 using System.Text.Json.Serialization;
+using FluentValidation.Results;
+
+namespace PMQ.Notifications;
 
 /// <summary>
 /// Base abstract class that provides validation capabilities to derived classes.
 /// </summary>
+/// <remarks>
+/// Accumulates rule violations instead of throwing, so that a broken business rule stays an
+/// expected outcome rather than exceptional control flow. Callers check <see cref="IsValid"/>
+/// and decide what to do with <see cref="ValidationResult"/>.
+/// </remarks>
 public abstract class Validatable
 {
     /// <summary>

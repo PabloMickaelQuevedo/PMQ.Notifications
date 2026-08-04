@@ -1,31 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <PackageId>PMQ.Notifications</PackageId>
-    <Version>1.0.7</Version>
-    <Authors>Pablo Mickael Quevedo</Authors>
-    <Company>Pablo Mickael Quevedo</Company>
+    <Version>1.1.0</Version>
     <Product>PMQ.Notifications</Product>
     <Description>
       A package for managing notifications and validations in .NET applications, making it easy to control messages, errors, and business rules in a centralized and strongly-typed way.
     </Description>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/PabloMickaelQuevedo/PMQ.Notifications</PackageProjectUrl>
     <RepositoryUrl>https://github.com/PabloMickaelQuevedo/PMQ.Notifications.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
     <PackageTags>notifications;validation;business-rules;dotnet;domain;ddd</PackageTags>
     <IncludeLicenseFile>true</IncludeLicenseFile>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Optimize>true</Optimize>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="FluentValidation" />
   </ItemGroup>
 
 </Project>
