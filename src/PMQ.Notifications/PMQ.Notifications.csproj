@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>PMQ.Notifications</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Product>PMQ.Notifications</Product>
     <Description>
       A package for managing notifications and validations in .NET applications, making it easy to control messages, errors, and business rules in a centralized and strongly-typed way.
