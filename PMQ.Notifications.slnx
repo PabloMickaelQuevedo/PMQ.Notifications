@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PMQ.Notifications/PMQ.Notifications.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PMQ.Notifications.Tests/PMQ.Notifications.Tests.csproj" />
+  </Folder>
+</Solution>
